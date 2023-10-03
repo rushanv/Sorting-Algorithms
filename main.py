@@ -83,12 +83,12 @@ def merge(heightArray, left, right, mid):
     rhs = mid+1
     lhs = left
     for i in range(0, right-left+1, 1):
-        if rhs > right or (lhs <= mid and heightArray[lhs] < heightArray[rhs]):
-            interim[i] = heightArray[lhs]
-            lhs += 1
-        elif lhs > mid or (rhs <= right and heightArray[lhs] > heightArray[rhs]):
+        if lhs > mid or (rhs <= right and heightArray[lhs] > heightArray[rhs]):
             interim[i] = heightArray[rhs]
             rhs += 1
+        else:
+            interim[i] = heightArray[lhs]
+            lhs += 1
         comparison += 1
     for j in range(0, right-left+1, 1):
         heightArray[left+j] = interim[j]
