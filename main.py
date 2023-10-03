@@ -139,6 +139,7 @@ def main():
             case "q":
                 break
             case 'x':
+                comparison = 0
                 screen = pygame.display.set_mode([sizeX, sizeY])
                 while True:
                     random.shuffle(heights)
