@@ -5,9 +5,7 @@ pygame.init()
 
 
 def updateDisplay(heightsArray, left, right, cmd):
-    drawn = False
     running = True
-    # heightsTest = list(range(1, 1000, 1))
     screen.fill((255, 255, 255))
     pygame.display.set_caption("hello chatters")
     pygame.font.init()
@@ -18,30 +16,15 @@ def updateDisplay(heightsArray, left, right, cmd):
     width = int(0.75 * sizeX / len(heightsArray))
     xCoordL = 0.125 * sizeX
     while running:
-        # press close button = close (crazy)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
 
         for i in range(len(heightsArray)):
-            # print(max(heightsTest))
             drawHeight = (heightsArray[i] / max(heightsArray)) * limit
-            # color = 100 - 100 * (i / len(heightsArray))
             color = (heightsArray[i] / max(heightsArray)) * 100
-            # borderWidth = int(10/number)
-            # print(borderWidth)
             pygame.draw.rect(screen, (255, color, 80), (xCoordL, sizeY-drawHeight, width, sizeY))
-            # if borderWidth > 0:
-            #     # print("helo")
-            #     pygame.draw.rect(screen, (0, 0, 0), (xCoordL, 800-drawHeight, width, 800), borderWidth)
-
-
-            # pygame.draw.circle(screen, (0, 255, 0), (xCoordR, 800-drawHeight), 5)
-            # pygame.draw.circle(screen, (255, 0, 0), (xCoordL, 800), 5)
-            # print(i, heightsArray[i], drawHeight, xCoordL, xCoordR, width)
-            # pygame.draw.rect(screen, (255, 203, 61), (xCoordL, 800, xCoordR, 800-drawHeight))
             xCoordL += width
-            # print(xCoordL)
 
         pygame.draw.rect(screen, (0, 0, 0), (0, 0, sizeX, sizeY), 5)
         screen.blit(fontObj, (50, 50))
@@ -52,9 +35,6 @@ def updateDisplay(heightsArray, left, right, cmd):
                 delay = (right-left)/(right+left)
         time.sleep(delay)
         return
-
-    # yellowish colour: 255-20*i, 203, 61
-    #
 
 
 def bubbleSort(heightArray, nrPersons):
@@ -147,9 +127,6 @@ def main():
                 break
             case 'x':
                 screen = pygame.display.set_mode([sizeX, sizeY])
-                # heightCopy = heights.copy()
-                # heightSorted = sorted(heights)
-                # print(heightSorted)
                 while True:
                     random.shuffle(heights)
                     updateDisplay(heights, 0, number-1, 'x')
@@ -199,29 +176,4 @@ def main():
     pygame.quit()
 
 
-# main()
-
-# screen = pygame.display.set_mode([sizeX, sizeY])
-# screen.fill((255, 255, 255))
-# pygame.display.set_caption("hello chatters")
-# heightsTest = list(range(1, 1000, 1))
-
 main()
-# pygame.quit()
-
-
-
-
-# yellowish colour: 255-20*i, 203, 61
-#
-
-
-
-
-# from dataclasses import dataclass
-#
-#
-# @dataclass
-# class persons:
-#     name: str
-#     height: float
