@@ -116,6 +116,19 @@ def main():
     global sizeX, sizeY, screen, comparison
     sizeX = 1920
     sizeY = 1080
+
+    print("--Command Help--")
+    print("\ti - initializes an array of specified size")
+    print("\tp - prints out the array")
+    print("\th - shows the minimum, maximum and range of the array")
+    print("\tr - lets you replace any value in the array")
+    print("\tf - shuffles the array")
+    print("\tb - bubble sort")
+    print("\ts - insertion sort")
+    print("\tm - merge sort")
+    print("\tx - bogosort !")
+    print("\tq - quit")
+
     while True:
         command = input("Command? ")
         match command:
