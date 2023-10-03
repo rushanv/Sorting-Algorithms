@@ -14,7 +14,7 @@ def updateDisplay(heightsArray, left, right, cmd):
     fontObj = fontVar.render(comparisonString, False, (0, 0, 0), (255, 255, 255))
     limit = 0.8 * sizeY
     width = int(0.75 * sizeX / len(heightsArray))
-    xCoordL = 0.125 * sizeX
+    xCoordL = (sizeX-len(heightsArray)*width)/2
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
