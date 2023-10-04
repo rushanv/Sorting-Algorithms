@@ -115,8 +115,10 @@ def mergeSort(heightArray, left, right):
 
 def main():
     global sizeX, sizeY, screen, comparison
-    sizeX = tkinter.Tk().winfo_screenwidth()
-    sizeY = tkinter.Tk().winfo_screenheight()
+    root = tkinter.Tk()
+    root.withdraw()
+    sizeX = root.winfo_screenwidth()
+    sizeY = root.winfo_screenheight()
 
     print("--Command Help--")
     print("\ti - initializes an array of specified size")
