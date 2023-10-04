@@ -1,6 +1,7 @@
 import time
 import pygame
 import random
+import tkinter
 pygame.init()
 
 
@@ -114,8 +115,8 @@ def mergeSort(heightArray, left, right):
 
 def main():
     global sizeX, sizeY, screen, comparison
-    sizeX = 1920
-    sizeY = 1080
+    sizeX = tkinter.Tk().winfo_screenwidth()
+    sizeY = tkinter.Tk().winfo_screenheight()
 
     print("--Command Help--")
     print("\ti - initializes an array of specified size")
